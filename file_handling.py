@@ -4,7 +4,7 @@ import json
 def read_file(file):
     with open(file, "r") as f:
         try:
-            return json.lead(f)
+            return json.load(f)
         except:
             return {}
 

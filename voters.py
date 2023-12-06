@@ -56,5 +56,43 @@ class Voter:
         else:
             print("Only 18+ can cast vote")
 
+    def update_voter_details(self, voter_id):
+        print(
+            "What details do you want to update?\n 1.Name\n 2.Date of Birth\n 3.Address\n 4.Password"
+        )
+        choice = input("Enter your choice: ")
 
-Voter().add_voter()
+        match choice:
+            case "1":
+                new_name = input("Enter new name: ")
+                self.voter[voter_id]["name"] = new_name
+            case "2":
+                new_dob = input("Enter new date of birth (YYYY-MM-DD format): ")
+                if self.eligibility(new_dob):
+                    self.voter[voter_id]["Date of birth"] = new_dob
+                else:
+                    print("Only 18+ can cast vote")
+            case "3":
+                new_address = input("Enter new address: ")
+                self.voter[voter_id]["address"] = new_address
+            case "4":
+                new_password = input("Enter new password: ")
+                if self.validate_password(new_password):
+                    hashed_password = self.hash_password(new_password)
+                    self.voter[voter_id]["password"] = hashed_password
+                else:
+                    print(
+                        "Error: Password should contain at least one lowercase, uppercase, digit, and special characters and be at least 8 characters long."
+                    )
+            case _:
+                print("Invalid choice")
+        write_file(self.voter, File_Name)
+        print("Details updated successfully")
+
+    def delete_voter(self, voter_id):
+        del self.voter[voter_id]
+        write_file(self.voter, File_Name)
+        print("Voter deleted successfully")
+
+
+# Voter().add_voter()

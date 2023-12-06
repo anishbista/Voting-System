@@ -11,4 +11,4 @@ def read_file(file):
 
 def write_file(obj, file):
     with open(file, "w") as f:
-        json.dump(obj, f)
+        json.dump(obj, f,indent=4)

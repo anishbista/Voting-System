@@ -1,18 +1,15 @@
 from file_handling import read_file, write_file
 
-File_Name = "schedule.json"
-
-
 class Schedule:
-    schedule = read_file(File_Name)
-
+    SFile_Name = "schedule.json"
+    schedule = read_file(SFile_Name)
     def add_schedule(self):
         constituency = input("Enter the constituency: ")
         date = input("Enter a date for election(YYYY-MM-DD format): ")
         if constituency in self.schedule:
             raise Exception("Constituency already added !")
         self.schedule[constituency] = {"date": date}
-        write_file(self.schedule, File_Name)
+        write_file(self.schedule, self.SFile_Name)
         print(f"{constituency}:{date} added successfully")
 
     def show_schedule(self):

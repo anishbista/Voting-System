@@ -54,6 +54,15 @@ class Voter:
         else:
             print("Only 18+ can cast vote")
 
+    def search_voter(self, voter_id):
+        voter = self.voter.get(voter_id)
+        if voter:
+            print("Voter Details:")
+            for key, value in voter.items():
+                print(f"{key}:{value}")
+        else:
+            print("Voter ID not found.")
+
     def update_voter_details(self, voter_id):
         print(
             "What details do you want to update?\n 1.Name\n 2.Date of Birth\n 3.Address\n 4.Password"

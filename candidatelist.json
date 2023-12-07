@@ -1,7 +1,22 @@
 [
     {
-        "candidate_name": "benup",
-        "political_party": "BG",
-        "candidancy_from": "lalitpur"
+        "candidate_name": "Anish",
+        "political_party": "A",
+        "candidancy_from": "Kathmandu"
+    },
+    {
+        "candidate_name": "Bista",
+        "political_party": "B",
+        "candidancy_from": "Kathmandu"
+    },
+    {
+        "candidate_name": "Ashish",
+        "political_party": "C",
+        "candidancy_from": "Kathmandu"
+    },
+    {
+        "candidate_name": "Benup",
+        "political_party": "D",
+        "candidancy_from": "Kathmandu"
     }
 ]

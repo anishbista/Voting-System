@@ -4,11 +4,9 @@ import hashlib
 from datetime import datetime
 from file_handling import read_file, write_file
 
-File_Name = "voters.json"
-
-
 class Voter:
-    voter = read_file(File_Name)
+    VFile_Name = "voters.json"
+    voter = read_file(VFile_Name)
 
     def validate_password(self, password):
         if re.match(
@@ -46,7 +44,7 @@ class Voter:
                     "address": address,
                     "password": hashed_password,
                 }
-                write_file(self.voter, File_Name)
+                write_file(self.voter, self.VFile_Name)
 
                 print("Voter added successfully")
             else:
@@ -95,12 +93,12 @@ class Voter:
                     )
             case _:
                 print("Invalid choice")
-        write_file(self.voter, File_Name)
+        write_file(self.voter, self.VFile_Name)
         print("Details updated successfully")
 
     def delete_voter(self, voter_id):
         del self.voter[voter_id]
-        write_file(self.voter, File_Name)
+        write_file(self.voter, self.VFile_Name)
         print("Voter deleted successfully")
 
 

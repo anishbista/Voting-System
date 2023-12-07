@@ -18,5 +18,15 @@
         "candidate_name": "Benup",
         "political_party": "D",
         "candidancy_from": "Kathmandu"
+    },
+    {
+        "candidate_name": "benup",
+        "political_party": "ABC",
+        "candidancy_from": "lalitpur"
+    },
+    {
+        "candidate_name": "anish",
+        "political_party": "XYZ",
+        "candidancy_from": "lalitpur"
     }
 ]

@@ -14,7 +14,7 @@ class VotingSystem(Candidate, Schedule, Voter, Voting, vote_result):
     user_address = None
 
     def login(self):
-        print(f"{'Login Form':.^100}")
+        print(f"{'Election Login Form':.^100}")
         Users = read_file("voters.json")
         user_id = input("Enter ID: ")
         password = input("Enter Password: ")

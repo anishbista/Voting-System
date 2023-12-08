@@ -6,10 +6,13 @@ from election_schedule import Schedule
 from voters import Voter
 from voting import Voting
 from result import vote_result
-import time,os
-class VotingSystem(Candidate,Schedule,Voter,Voting,vote_result):
+import time, os
+
+
+class VotingSystem(Candidate, Schedule, Voter, Voting, vote_result):
     user_id = None
-    user_address=None
+    user_address = None
+
     def login(self):
         print(f"{'Login Form':.^100}")
         Users = read_file("voters.json")
@@ -29,21 +32,23 @@ class VotingSystem(Candidate,Schedule,Voter,Voting,vote_result):
                     print("User Login Successful")
                     time.sleep(2)
                     self.user_id = voter_id
-                    self.user_address=user_info["address"]
+                    self.user_address = user_info["address"]
                     return 0
         return None
+
     def admin_help(self):
         print(f"{'Help Panel':-^100}")
         print("1->Adding Election Schedule")
         print("2->Showing Election Schedule")
         print("3->Add Candidate for Election")
-        print("4->Add Candidate for Election")
-        print("5->Update Candidate of Election")
+        print("4->Update Candidate of Election")
+        print("5->Delete Candidate for Election")
         print("6->Show Candidate for Election")
         print("7->Generate Voting Result")
         print("8->Show Voting Result")
         print("9->Exit Out of Voting System")
-        print("-"*100)
+        print("-" * 100)
+
     def voter_help(self):
         print(f"{'Help Panel':-^100}")
         print("1->Search Detail of Voter")
@@ -51,12 +56,16 @@ class VotingSystem(Candidate,Schedule,Voter,Voting,vote_result):
         print("3->Delete Voter")
         print("4->Cast a vote")
         print("5->Exit Out of Voting System")
-        print("-"*100)
+        print("-" * 100)
+
+
 def clear_terminal():
-    if os.name=='posix':
-        os.system('clear')
+    if os.name == "posix":
+        os.system("clear")
     else:
-        os.system('cls')
+        os.system("cls")
+
+
 clear_terminal()
 vs = VotingSystem()
 usr_type = vs.login()
@@ -65,7 +74,7 @@ if usr_type == 1:
     print(f"{'Admin':#^100}")
     while 1:
         vs.admin_help()
-        choice=int(input("Enter command:"))
+        choice = int(input("Enter command:"))
         match choice:
             case 1:
                 clear_terminal()
@@ -96,8 +105,8 @@ if usr_type == 1:
                 vs.show_result()
                 time.sleep(1)
             case 9:
-                Echoice=input("Are you sure you want to exit[yes/no]:").lower()
-                if Echoice=='yes' or Echoice=='y':
+                Echoice = input("Are you sure you want to exit[yes/no]:").lower()
+                if Echoice == "yes" or Echoice == "y":
                     break
                 else:
                     print("Continuing....")
@@ -108,7 +117,7 @@ elif usr_type == 0:
     print(f"{'User':#^100}")
     while 1:
         vs.voter_help()
-        choice=int(input("Enter command:"))
+        choice = int(input("Enter command:"))
         match choice:
             case 1:
                 clear_terminal()
@@ -127,8 +136,8 @@ elif usr_type == 0:
                 vs.show_candidate(vs.user_address)
                 time.sleep(1)
             case 5:
-                Echoice=input("Are you sure you want to exit[yes/no]:").lower()
-                if Echoice=='yes' or Echoice=='y':
+                Echoice = input("Are you sure you want to exit[yes/no]:").lower()
+                if Echoice == "yes" or Echoice == "y":
                     break
                 else:
                     print("Continuing....")
@@ -138,8 +147,8 @@ else:
     clear_terminal()
     print("Id or Password didn't match!")
     time.sleep(1)
-    register=input("Do you want to register Voter[yes/no]:").lower()
-    if register=='yes' or register=='y':
+    register = input("Do you want to register Voter[yes/no]:").lower()
+    if register == "yes" or register == "y":
         vs.add_voter()
     else:
         print("Exiting....")

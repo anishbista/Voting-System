@@ -4,6 +4,7 @@ from file_handling import read_file, write_file
 class Candidate:
     def __init__(self):
         self._candidate_list = list()
+
     def addCandidate(self):
         cname = input("Enter name of candidate who participate in election:").lower()
         political_party = input("Enter name of party name:").upper()

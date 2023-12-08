@@ -1,20 +1,14 @@
 {
-    "192d85b2-c5bd-44a7-b6d8-653312f03c16": {
-        "name": "anish bisya",
-        "Date of birth": "2000-03-14",
-        "address": "ktm",
-        "password": "Deathnote92$"
-    },
-    "6303967": {
-        "name": "dsa",
-        "Date of birth": "2002-12-23",
-        "address": "asddsa",
-        "password": "Deathnote92$"
-    },
     "9f201e2": {
         "name": "benup",
         "Date of birth": "2001-05-10",
         "address": "lalitpur",
-        "password": "daa2e3e9616b329516f34f93af0a61ae55224ceac298344f3dc7ed18fc1e7e65"
+        "password": "c5d917ec4d52b08d3ec9083180ad2d427fb4e4d45bda278c527c2ef9d1bb1e55"
+    },
+    "36d2b1d": {
+        "name": "anish",
+        "Date of birth": "2000-03-04",
+        "address": "kathmandu",
+        "password": "c5d917ec4d52b08d3ec9083180ad2d427fb4e4d45bda278c527c2ef9d1bb1e55"
     }
 }

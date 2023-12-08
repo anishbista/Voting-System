@@ -28,10 +28,5 @@
         "candidate_name": "anish",
         "political_party": "XYZ",
         "candidancy_from": "lalitpur"
-    },
-    {
-        "candidate_name": "hari",
-        "political_party": "CONGRESS",
-        "candidancy_from": "kathmandu"
     }
 ]

@@ -97,6 +97,7 @@ class Candidate:
 
     def deleteCandidate(self):
         self._candidate_list = read_file("candidatelist.json")
+
         if len(self._candidate_list) > 0:
             cname = input("Enter name of candidate to be deleted:").lower()
             political_party = input("Enter name of party name:").upper()

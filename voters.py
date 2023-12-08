@@ -45,7 +45,7 @@ class Voter:
                     "password": hashed_password,
                 }
                 write_file(self.voter, self.VFile_Name)
-
+                print(f"Note vote_id:{unique_id}")
                 print("Voter added successfully")
             else:
                 print(

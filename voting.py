@@ -1,12 +1,11 @@
 from file_handling import read_file, write_file
 
-File_Name = "votecount.json"
-
-
 class Voting:
+    VCFile_Name = "votecount.json"
+    votecount = read_file(VCFile_Name)
+    candidatelist = read_file("candidatelist.json")
     def __init__(self):
-        self.votecount = read_file(File_Name)
-        self.candidatelist = read_file("candidatelist.json")
+        pass
 
     def show_candidate(self, location):
         candidates = [
@@ -42,9 +41,5 @@ class Voting:
                 self.votecount[location][party_name] = 1
         else:
             self.votecount[location] = {party_name: 1}
-        write_file(self.votecount, File_Name)
+        write_file(self.votecount, self.VCFile_Name)
         print(f"Vote casted for {candidate['candidate_name']}")
-
-
-voting = Voting()
-voting.show_candidate("Lalitpur")
